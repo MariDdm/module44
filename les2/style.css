@@ -16,8 +16,10 @@ h1 {
 }
 
 .paragraph-3 {
-    font-weight: bold;
-    font-size: 22px;
-    font-family: 'Courier New', Courier, monospace; 
-    padding-left: 20px;
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+    text-shadow: greenyellow 4px 5px 6px;
+    
+    
 }
