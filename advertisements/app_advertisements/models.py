@@ -1,10 +1,25 @@
 from django.db import models
 from django.contrib import admin
 from django.utils.html import format_html
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
+
 
 
 class Advertisement(models.Model):
 
+    user = models.ForeignKey(
+        User, 
+        verbose_name = 'пользователь', 
+        on_delete=models.CASCADE
+    )
+
+    image = models.ImageField(
+        'изоброжение',
+        upload_to = 'advertisements/'
+    )
     # Товар
     # строковое поле небольших размеров
     # "заголовок" - verbose_name - название поле извне
@@ -54,10 +69,12 @@ class Advertisement(models.Model):
     class Meta: 
         db_table = 'advertisements'
 
-    # Актуальность объявления
-    # Количество товара
+    
     # Имя продавца + контакты
+
     # Возможен ли обмен
     # Адрес продажи/осмотре
     # Б/у товар или нет
     # Возможно ли взять в долг/рассрочку
+    # Актуальность объявления
+    # Количество товара
